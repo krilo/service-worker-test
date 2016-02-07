@@ -25,6 +25,8 @@
     "node-notifier": "^4.4.0",
     "node-sass": "^3.4.2",
     "npm": "^3.7.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "sw-precache": "^2.3.0"
   }
 }

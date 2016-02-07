@@ -27,7 +27,7 @@
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["/js/app.js","d41d8cd98f00b204e9800998ecf8427e"]];
+var PrecacheConfig = [["dist/js/app.js","d41d8cd98f00b204e9800998ecf8427e"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 
@@ -222,4 +222,3 @@ self.addEventListener('fetch', function(event) {
     }
   }
 });
-

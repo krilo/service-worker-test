@@ -59,7 +59,9 @@ gulp.task("build-js", function() {
   console.log(" -- Compiling ".green + "js ".cyan + new Date());
   browserify(mainjs)
     .transform("babelify", {presets: ["es2015", "react"]})
+      .on("error", notifyError)
     .bundle()
+      .on("error", notifyError)
     .pipe(fs.createWriteStream(distdirs.js+"/app.js"));
 });
 
@@ -95,9 +97,8 @@ gulp.task("watch-css", function() {
 
 gulp.task('generate-service-worker', function(callback) {
   var rootDir = 'dist';
-  swPrecache.write(path.join(rootDir, 'service-worker.js'), {
-    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif}'],
-    stripPrefix: rootDir
+  swPrecache.write('service-worker.js', {
+    staticFileGlobs: ['dist/**/*.{js,html,css,png,jpg,gif}']
   }, callback);
 });
 
